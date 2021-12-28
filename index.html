@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- <div class="notice-box">
+        <div class="notice">
+            <div class="notice-title">
+                <div class="notice-title__title">
+                    这是 Notice 标题
+                </div>
+                <div class="notice-title__close"></div>
+            </div>
+            <div class="notice-content">这是显示的内容这是显示的内容这是显示的内容这是显示的内容</div>
+            <div class="notice-footer">
+                <div class="notice-footer__cancel">取消</div>
+                <div class="notice-footer__confirm">确定</div>
+            </div>
+        </div>
+    </div> -->
+    <button id="button">点击弹出消息</button>
+</body>
+</html>
+<script src="./src/index.js"></script>
+<script>
+    const notice = new Notice({})
+    const btn = document.querySelector('#button');
+    btn.addEventListener('click', () => {
+        console.log('xx')
+        notice.open({
+            title: 'xx',
+            content: 'xx',
+            confirmLabel: 'xx',
+            cancelLabel: 'xx'
+        })
+    })
+</script>
+<!-- <script>
+    const btn = document.querySelector('#button');
+    const notice = document.querySelector('.notice');
+    let toggle = false;
+    btn.addEventListener('click', () => {
+        if (toggle) {
+            console.log('call')
+            toggle = false
+            notice.style.animationName = 'noticeMoveOut';
+            notice.style.animationPlayState = 'running'
+        } else {
+            console.log('call')
+            toggle = true
+            notice.style.display = 'block'
+            notice.style.animationName = 'noticeMoveIn'
+            notice.style.animationPlayState = 'running'
+        }
+    })
+
+    const confirmBtn = document.querySelector('.notice-footer__confirm');
+    const cancelBtn = document.querySelector('.notice-footer__cancel');
+
+    confirmBtn.onclick = () => {
+        toggle = false
+        notice.style.animationName = 'noticeMoveOut';
+        notice.style.animationPlayState = 'running'
+    }
+
+    cancelBtn.onclick = () => {
+        toggle = false
+        notice.style.animationName = 'noticeMoveOut';
+        notice.style.animationPlayState = 'running'
+    }
+</script> -->
